@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,600&display=swap");
+
+:root {
+  color: #1b1610;
+  background:
+    radial-gradient(circle at top left, rgba(240, 191, 143, 0.28), transparent 28%),
+    linear-gradient(180deg, #efe4d3 0%, #d8c3a8 100%);
+  font-family: "Newsreader", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 28px 18px 36px;
+}
+
+.hero,
+.workspace {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 12px 4px 24px;
+}
+
+.eyebrow,
+.panel-label,
+.page-meta,
+.page-count,
+.status-chip {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.panel-header h2 {
+  margin: 0;
+  font-weight: 600;
+}
+
+.hero h1 {
+  max-width: 11ch;
+  font-size: clamp(2.9rem, 6vw, 5.2rem);
+  line-height: 0.92;
+}
+
+.hero-copy {
+  max-width: 52rem;
+  margin: 16px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(27, 22, 16, 0.78);
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  border: 1px solid rgba(27, 22, 16, 0.08);
+  border-radius: 28px;
+  background: rgba(251, 248, 242, 0.82);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 22px 56px rgba(54, 35, 18, 0.12);
+}
+
+.panel-left {
+  padding: 18px;
+  position: sticky;
+  top: 18px;
+}
+
+.panel-right {
+  padding: 0;
+  min-height: 80vh;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+.panel-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.panel-header-secondary {
+  margin-top: 18px;
+}
+
+.status-chip,
+.page-count {
+  border-radius: 999px;
+  padding: 8px 10px;
+  background: rgba(27, 22, 16, 0.06);
+}
+
+.status-chip.ok {
+  color: #1d5c43;
+  background: rgba(48, 135, 92, 0.12);
+}
+
+.status-chip.error {
+  color: #8c2f1f;
+  background: rgba(186, 74, 51, 0.12);
+}
+
+.json-editor,
+.json-preview,
+.error-card pre {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 20px;
+  background: #201a15;
+  color: #f7efe4;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.83rem;
+  line-height: 1.55;
+}
+
+.json-editor {
+  min-height: 340px;
+  resize: vertical;
+  padding: 16px;
+}
+
+.json-preview,
+.error-card pre {
+  min-height: 300px;
+  padding: 16px;
+  overflow: auto;
+}
+
+.preview-viewport {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 28px;
+}
+
+.preview-viewport canvas {
+  display: block;
+}
+
+.error-card {
+  min-height: 80vh;
+  display: flex;
+}
+
+.error-card pre {
+  flex: 1;
+}
+
+@media (max-width: 1080px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-left {
+    position: static;
+  }
+}
